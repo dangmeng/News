@@ -1,5 +1,6 @@
 package com.dm.news;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -92,7 +93,7 @@ public class MainActivity extends BaseActivity
 
                     @Override
                     public void onNext(User user) {
-                        mTvName.setText(user.getLogin());
+                        mTvName.setText(user.getName());
                         mTvUrl.setText(user.getHtml_url());
                         Glide.with(MainActivity.this)
                                 .load(user.getAvatar_url())
@@ -139,7 +140,7 @@ public class MainActivity extends BaseActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 

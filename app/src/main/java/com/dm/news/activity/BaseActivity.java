@@ -27,7 +27,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         Log.i(TAG,TAG + "create");
         initView();
         initData();
+        initListener();
     }
+
+
 
     protected abstract void initView();
 
@@ -47,6 +50,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void initData() {}
-
+    protected void initListener() {}
 
 }

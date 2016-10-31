@@ -1,5 +1,6 @@
 package com.dm.news.fragment;
 
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.dm.news.R;
+import com.dm.news.activity.NewsDetailActivity;
 import com.dm.news.adapter.NewsAdapter;
 import com.dm.news.bean.NewsGson;
 import com.dm.news.manager.RetrofitManager;
@@ -128,6 +130,10 @@ public class NewsFragment extends BaseFragment {
                 NewsGson.NewslistBean newslistBean = mNewslist.get(position);
                 String picUrl = newslistBean.getPicUrl();
                 String url = newslistBean.getUrl();
+                Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+                intent.putExtra("picUrl",picUrl);
+                intent.putExtra("url",url);
+                startActivity(intent);
             }
         });
 
