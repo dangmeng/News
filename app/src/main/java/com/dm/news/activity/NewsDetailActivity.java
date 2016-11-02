@@ -1,7 +1,6 @@
 package com.dm.news.activity;
 
 import android.content.Intent;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebView;
@@ -11,9 +10,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.dm.news.R;
 
+@SuppressWarnings({"ConstantConditions", "deprecation"})
 public class NewsDetailActivity extends BaseActivity {
 
-    private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private Toolbar mToolbar;
     private ImageView mNewsImage;
     private WebView mWebView;
@@ -21,7 +20,6 @@ public class NewsDetailActivity extends BaseActivity {
     @Override
     protected void initView() {
         setContentView(R.layout.activity_news_detail);
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_newsdetail);
         mToolbar = (Toolbar) findViewById(R.id.toolbar_newsdetail);
         mNewsImage = (ImageView) findViewById(R.id.iv_newsdetail);
         mWebView = (WebView) findViewById(R.id.web_text_newsdetail);

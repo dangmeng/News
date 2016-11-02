@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.dm.news.activity.BaseActivity;
 import com.dm.news.bean.User;
+import com.dm.news.fragment.MeiZiFragment;
 import com.dm.news.fragment.NewsFragment;
 import com.dm.news.manager.RetrofitManager;
 
@@ -30,12 +31,14 @@ public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String NEWSTAG = "news";
+    @SuppressWarnings("unused")
     public static final String MEIZI = "meizi";
     private Subscription mSubscribe;
     private ImageView mIvAvatar;
     private TextView mTvName;
     private TextView mTvUrl;
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void initView() {
         setContentView(R.layout.activity_main);
@@ -149,7 +152,8 @@ public class MainActivity extends BaseActivity
             NewsFragment newsFragment = new NewsFragment();
             addFragment(newsFragment,NEWSTAG);
         } else if (id == R.id.nav_gallery) {
-
+            MeiZiFragment meiZiFragment = new MeiZiFragment();
+            addFragment(meiZiFragment,MEIZI);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

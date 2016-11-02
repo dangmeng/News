@@ -25,6 +25,7 @@
         <activity android:name=".activity.NewsDetailActivity"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".activity.ImagePagerActivity"/>
     </application>
 
 </manifest>

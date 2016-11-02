@@ -3,6 +3,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="viewpager_indicator">%1$d/%2$d</string>
     <string name="action_settings">Settings</string>
 </resources>

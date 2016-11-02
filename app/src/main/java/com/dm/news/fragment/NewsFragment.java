@@ -81,7 +81,7 @@ public class NewsFragment extends BaseFragment {
 
     @Override
     protected View initRootView(LayoutInflater inflater, @Nullable ViewGroup container) {
-        View view = inflater.inflate(R.layout.news_fragment_layout, container, false);
+        View view = inflater.inflate(R.layout.common_fragment_layout, container, false);
         return view;
     }
 
