@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,6 +124,10 @@ public class MeiZiFragment extends BaseFragment {
             public void onItemClick(int position) {
                 Intent intent = new Intent(getActivity(), ImagePagerActivity.class);
                 // 图片url,为了演示这里使用常量，一般从数据库中或网络中获取
+                Log.i("position-->", position + "");
+                if (position > 9) {//避免下标越界
+                    position = 0;
+                }
                 String[] urls = {mNewslist.get(position).getPicUrl()};
                 intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_URLS, urls);
                 intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_INDEX, position);
