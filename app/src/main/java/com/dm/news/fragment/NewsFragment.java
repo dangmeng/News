@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +46,7 @@ public class NewsFragment extends BaseFragment {
         //数据处理
         mSubscribe = RetrofitManager.getInstence()
                 .getApiService()
-                .getNewsData("0271191a3d0bcd8483debff0c759f20a", "10", page)
+                .getNewsData("640e393cf5f15e5ba3f7fcac9e860504", "10", page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<NewsGson>() {
@@ -70,7 +71,7 @@ public class NewsFragment extends BaseFragment {
                     @Override
                     public void onNext(NewsGson newsGson) {
                         mNewslist = newsGson.getNewslist();
-
+                        Log.i("test-data-->",mNewslist.get(0).toString());
                         mNewsAdapter.addAll(mNewslist);
                         mNewsAdapter.notifyDataSetChanged();
                     }

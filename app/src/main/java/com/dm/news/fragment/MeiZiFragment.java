@@ -43,7 +43,7 @@ public class MeiZiFragment extends BaseFragment {
     @Override
     protected void initData() {
         mSubscribe = RetrofitManager.getInstence().getApiService()
-                .getPictureData("0271191a3d0bcd8483debff0c759f20a", "10", page)
+                .getPictureData("640e393cf5f15e5ba3f7fcac9e860504", "10", page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<MeiNvGson>() {
@@ -67,6 +67,7 @@ public class MeiZiFragment extends BaseFragment {
                     @Override
                     public void onNext(MeiNvGson meiNvGson) {
                         mNewslist =  meiNvGson.getNewslist();
+                        Log.i("test-data-->",mNewslist.get(0).toString());
                         mImageAdapter.addAll(mNewslist);
                     }
                 });
